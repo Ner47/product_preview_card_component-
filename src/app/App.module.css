@@ -4,3 +4,39 @@
   justify-content: center;
   align-items: center;
 }
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 640px;
+  padding: 24px;
+}
+
+.product__img {
+  display: block;
+  width: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.product__card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 0 10px 10px 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .product {
+    grid-template-columns: 1fr;
+    max-width: 375px;
+  }
+
+  .product__img {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .product__card {
+    border-radius: 0 0 10px 10px;
+  }
+}
