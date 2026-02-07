@@ -3,44 +3,48 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .product {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 640px;
-  padding: 20px;
+
+  border-radius: 10px;
+  background: var(--white);
+  overflow: hidden;
 }
 
 .product__img {
   display: block;
   width: 100%;
-  border-radius: 10px 0 0 10px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .product__card {
-  background: var(--white);
   padding: 30px;
-  border-radius: 0 10px 10px 0;
 }
 
-.product__teg {
+.product__tag {
   letter-spacing: 3px;
   color: var(--grey);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .product__title {
-  font-family: Fraunces;
-  font-size: 30px;
-  line-height: 1;
+  font-family: Fraunces, serif;
+  font-size: 35px;
+  line-height: 1.1;
   color: var(--black);
+  margin: 12px 0;
 }
 
 .product__text {
   color: var(--grey);
   font-size: 15px;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 }
 
 .product__price {
@@ -50,49 +54,53 @@
 }
 
 .product__newPrice {
-  font-family: Fraunces;
+  font-family: Fraunces, serif;
   color: var(--green-500);
   font-size: 30px;
 }
 
 .product__oldPrice {
-  text-decoration: line-through 2px;
+  text-decoration: line-through;
   color: var(--grey);
+  text-decoration-thickness: 2px;
 }
 
 .product__button {
-  color: var(--white);
-  font-size: 15px;
-  font-weight: 700;
-  background-color: var(--green-500);
-  border: 0;
-  border-radius: 10px;
-  padding: 15px;
   margin-top: 20px;
+  padding: 20px;
   width: 100%;
-  cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+
+  background-color: var(--green-500);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;  
+}
+
+.product__button:hover {
+  background-color: var(--green-700);
+}
+
+.product__button:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--green-500), white 35%);
+  outline-offset: 3px;
 }
 
 .product__button:active {
-  background-color: var(--green-700);
+  transform: translateY(1px);
 }
 
 @media (max-width: 768px) {
   .product {
     grid-template-columns: 1fr;
     max-width: 375px;
-  }
-
-  .product__img {
-    border-radius: 10px 10px 0 0;
-  }
-
-  .product__card {
-    border-radius: 0 0 10px 10px;
   }
 }
